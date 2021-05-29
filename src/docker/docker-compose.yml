@@ -1,0 +1,9 @@
+services:
+  pet-clinic-one:
+    image: jmgoyesc/juan-goyes-petclinic
+    ports:
+      - "8080:8080"
+  pet-clinic-two:
+    image: jmgoyesc/juan-goyes-petclinic
+    ports:
+      - "8081:8080"
