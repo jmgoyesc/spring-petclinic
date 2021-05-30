@@ -1,0 +1,48 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ext-jenkins
+spec:
+  type: ExternalName
+  externalName: jenkins.jenkins.svc.cluster.local
+  ports:
+    - port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: general-ingress
+spec:
+  rules:
+    - host: sonar.hello-world.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sonarqube-sonarqube
+                port:
+                  number: 9000
+
+    - host: jenkins.hello-world.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ext-jenkins
+                port:
+                  number: 8080
+
+    - host: petclinic.hello-world.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: petclinic
+                port:
+                  number: 80

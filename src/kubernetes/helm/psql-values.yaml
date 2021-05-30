@@ -1,0 +1,5 @@
+persistence:
+  enabled: false
+postgresqlUsername: userSonar
+postgresqlPassword: passwordSonar
+postgresqlDatabase: dbSonar

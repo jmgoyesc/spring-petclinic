@@ -1,0 +1,11 @@
+image:
+  tag: 8.9.0-community
+
+postgresql:
+  enabled: false
+  postgresqlServer: postgres-postgresql
+  postgresqlUsername: userSonar
+  postgresqlPassword: passwordSonar
+  postgresqlDatabase: dbSonar
+  service:
+    port: 5432
