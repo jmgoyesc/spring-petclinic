@@ -24,7 +24,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('minikube-sonarqube') {
-                    sh 'mvn package -DskipTests'
+                    sh 'mvn clean package -DskipTests'
                     sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=spring-petclinic  -Dsonar.sources=. -Dsonar.java.binaries=target/classes"
                 }
                 sh 'mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)'
