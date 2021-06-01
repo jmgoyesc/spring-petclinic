@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: deployer
+rules:
+  - apiGroups: [""]
+    resources: ["deployments"]
+    verbs: ["get", "update", "patch", "list"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "update", "patch", "list"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployer
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: jenkins
+    namespace: jenkins
+roleRef:
+  kind: Role
+  name: deployer
+  apiGroup: rbac.authorization.k8s.io

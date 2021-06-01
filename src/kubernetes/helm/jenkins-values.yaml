@@ -1,0 +1,26 @@
+controller:
+  numExecutors: 2
+  additionalPlugins:
+    - sonar:2.13.1
+    - docker-plugin:1.2.2
+    - docker-workflow:1.26
+    - kubernetes-cli:1.10.2
+  installLatestPlugins: true
+
+agent:
+  volumes:
+    - type: HostPath
+      hostPath: /var/run/docker.sock
+      mountPath: /var/run/docker.sock
+
+persistence:
+  volumes:
+    - name: docker
+      hostPath:
+        path: /var/run/docker.sock
+  mounts:
+    - mountPath: /var/run/docker.sock
+      name: docker
+
+serviceAccount:
+
