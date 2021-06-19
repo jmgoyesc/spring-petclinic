@@ -1,5 +1,4 @@
 # Start minikube (none for VM), hyperkit for MacOS
-#minikube start --vm-driver=none
 minikube start --vm-driver=hyperkit --cpus 6 --memory 8192
 
 # enable ingress in minikube
