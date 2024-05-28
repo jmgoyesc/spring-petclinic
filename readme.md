@@ -1,6 +1,7 @@
-Check my article about building a Docker image using this project
+Check my articles using the PetClinic in some DevOps experiments:
 
 - [DevOps dummies — My first docker deployment](https://medium.com/@jmgoyesc/devops-dummies-my-first-docker-deployment-5f30655f24c0)
+- [DevOps dummies — My first Kubernetes deployment](https://medium.com/@jmgoyesc/devops-dummies-my-first-kubernetes-deployment-c8b40ed569a5)
 
 
 # Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=main)](https://travis-ci.org/spring-projects/spring-petclinic/)
